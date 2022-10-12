@@ -57,6 +57,9 @@ function CreateGames(Parent)
 		TitleLabel.TextSize = 20
 		TitleLabel.TextColor3 = Color3.fromRGB(237, 237, 237)
 		TitleLabel.Text = i
+		
+		ButtonCorner.CornerRadius = UDim.new(0, 3)
+		ButtonStroke.Color = Color3.fromRGB(60, 60, 60)
 	end
 end
 
@@ -129,6 +132,8 @@ function Library:CreateHub()
 	local LinkButtonLabel = Instance.new("TextLabel", LinkButton)
 	local GameSectionFrame = Instance.new("Frame", SectionsFrame)
 	local GameSectionContainer = Instance.new("ScrollingFrame", GameSectionFrame)
+	local GameSectionList = Instance.new("UIListLayout", GameSectionContainer)
+	local GameSectionPadding = Instance.new("UIPadding", GameSectionContainer)
 	
 	SpectrumUI.Parent = game.Players.LocalPlayer.PlayerGui
 	SpectrumUI.ZIndexBehavior = Enum.ZIndexBehavior.Global
@@ -517,6 +522,11 @@ function Library:CreateHub()
 	StatusStroke.Color = Color3.fromRGB(60, 60, 60)
 
 	PremiumPadding.PaddingTop = UDim.new(0.015, 0)
+	GameSectionPadding.PaddingTop = UDim.new(0.01, 0)
+	GameSectionPadding.PaddingLeft = UDim.new(0.015, 0)
+	GameSectionList.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	GameSectionList.Padding = UDim.new(0.01, 0)
+	GameSectionList.SortOrder = Enum.SortOrder.LayoutOrder
 	
 	CreateGames(GameSectionContainer)
 	
