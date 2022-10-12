@@ -679,6 +679,10 @@ function Library:CreateHub()
 		
 		return Section
 	end
+	
+	TopBarCloseButton.MouseButton1Click:Connect(function()
+		MainFrame.Visible = false
+	end)
 			
 	return Tab
 end
