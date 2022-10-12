@@ -558,6 +558,46 @@ function Library:CreateHub()
 			SectionContainer.ScrollBarThickness = 8
 			SectionContainer.ZIndex = 2
 			SectionContainer.BorderSizePixel = 0
+			
+			function SectionTable:Button(Info)
+				local ButtonFrame = Instance.new("Frame", Info.Parent)
+				local Button = Instance.new("TextButton", ButtonFrame)
+				local ButtonPattern = Instance.new("ImageLabel", ButtonFrame)
+				local TitleLabel = Instance.new("TextLabel", ButtonFrame)
+				local ButtonCorner = Instance.new("UICorner", ButtonFrame)
+				local ButtonStroke = Instance.new("UIStroke", ButtonFrame)
+				
+				ButtonFrame.Size = UDim2.new(0.95, 0, 0, 35)
+				ButtonFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+				ButtonFrame.ZIndex = 3
+				ButtonFrame.Name = Info.Name
+				
+				Button.Size = UDim2.new(1, 0, 1, 0)
+				Button.BackgroundTransparency = 1
+				Button.Text = ""
+				Button.ZIndex = 3
+				
+				ButtonPattern.Size = UDim2.new(1, 0, 1, 0)
+				ButtonPattern.Position = UDim2.new(0.5, 0, 0.5, 0)
+				ButtonPattern.AnchorPoint = Vector2.new(0.5, 0.5)
+				ButtonPattern.BackgroundTransparency = 1
+				ButtonPattern.ImageColor3 = Color3.fromRGB(0, 0, 0)
+				ButtonPattern.ScaleType = Enum.ScaleType.Tile
+				ButtonPattern.TileSize = UDim2.new(0, 30, 0, 30)
+				ButtonPattern.ImageTransparency = 0.7
+				ButtonPattern.Image = "rbxassetid://300134974"
+				ButtonPattern.ZIndex = 3
+				
+				TitleLabel.Size = UDim2.new(0.554, 0, 1, 0)
+				TitleLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+				TitleLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+				TitleLabel.BackgroundTransparency = 1
+				TitleLabel.ZIndex = 4
+				TitleLabel.Font = Enum.Font.GothamBold
+				TitleLabel.TextSize = 20
+				TitleLabel.TextColor3 = Color3.fromRGB(237, 237, 237)
+				TitleLabel.Text = Info.Text
+			end
 		end
 		
 		return Section
