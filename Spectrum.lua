@@ -562,7 +562,7 @@ function Library:CreateHub()
 		return Section
 	end
 	
-	for i, v in pairs(SideBarContainer:GetChildren()) do
+	--[[for i, v in pairs(SideBarContainer:GetChildren()) do
 		for x, y in pairs(SectionsFrame:GetChildren()) do
 			if v:IsA("Frame") then
 				if y:IsA("Frame") then
@@ -576,7 +576,7 @@ function Library:CreateHub()
 				end
 			end
 		end
-	end
+	end--]]
 			
 	return Tab
 end
