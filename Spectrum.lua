@@ -12,7 +12,6 @@ local DragSpeed = 0.25
 local DragStart = nil
 local StartPosition = nil
 local PlayerMouse = game.Players.LocalPlayer:GetMouse()
-local SpectrumGui
 
 --// Main \\--
 
@@ -562,9 +561,7 @@ function Library:CreateHub()
 		
 		return Section
 	end
-	
-	SpectrumGui = SpectrumUI
-	
+		
 	return Tab
 end
 
