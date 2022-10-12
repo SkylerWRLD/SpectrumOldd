@@ -492,7 +492,7 @@ function Library:CreateHub()
 		local Corner = Instance.new("UICorner", TabFrame)
 		local PatternCorner = Instance.new("UICorner", Pattern)
 		local Stroke = Instance.new("UIStroke", TabFrame)
-		
+				
 		Tab.Size = UDim2.new(0.93, 0, 0, 27)
 		Tab.BackgroundTransparency = 1
 		Tab.ZIndex = 3
@@ -568,12 +568,12 @@ function Library:CreateHub()
 	return Tab
 end
 
-for i, v in pairs(SpectrumGui.Main.SideBar.Container:GetChildren()) do
-	if v:IsA("Frame") then
-		v.Frame.TextButton.MouseButton1Click:Connect(function()
+for i, v in pairs(SpectrumGui.Main.SideBar.Container:GetDescendants()()) do
+	if v:IsA("TextButton") then
+		v.MouseButton1Click:Connect(function()
 			for x, y in pairs(SpectrumGui.Main.Sections:GetChildren()) do
 				if y:IsA("Frame") then
-					if y.Name == v.Frame.TextLabel.Text then
+					if v.Parent.TextLabel.Text == y.Name then
 						y.Visible = true
 					else
 						y.Visible = false
