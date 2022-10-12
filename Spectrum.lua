@@ -12,8 +12,53 @@ local DragSpeed = 0.25
 local DragStart = nil
 local StartPosition = nil
 local PlayerMouse = game.Players.LocalPlayer:GetMouse()
+local Games = {
+	"Murder Mystery 2"
+}
 
 --// Main \\--
+
+function CreateGames(Parent)
+	for i, v in pairs(Games) do
+		local ButtonFrame = Instance.new("Frame", Parent)
+		local Button = Instance.new("TextButton", ButtonFrame)
+		local ButtonPattern = Instance.new("ImageLabel", ButtonFrame)
+		local TitleLabel = Instance.new("TextLabel", ButtonFrame)
+		local ButtonCorner = Instance.new("UICorner", ButtonFrame)
+		local ButtonStroke = Instance.new("UIStroke", ButtonFrame)
+
+		ButtonFrame.Size = UDim2.new(0.95, 0, 0, 35)
+		ButtonFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+		ButtonFrame.ZIndex = 3
+		ButtonFrame.Name = v
+
+		Button.Size = UDim2.new(1, 0, 1, 0)
+		Button.BackgroundTransparency = 1
+		Button.Text = ""
+		Button.ZIndex = 3
+
+		ButtonPattern.Size = UDim2.new(1, 0, 1, 0)
+		ButtonPattern.Position = UDim2.new(0.5, 0, 0.5, 0)
+		ButtonPattern.AnchorPoint = Vector2.new(0.5, 0.5)
+		ButtonPattern.BackgroundTransparency = 1
+		ButtonPattern.ImageColor3 = Color3.fromRGB(0, 0, 0)
+		ButtonPattern.ScaleType = Enum.ScaleType.Tile
+		ButtonPattern.TileSize = UDim2.new(0, 30, 0, 30)
+		ButtonPattern.ImageTransparency = 0.7
+		ButtonPattern.Image = "rbxassetid://300134974"
+		ButtonPattern.ZIndex = 3
+
+		TitleLabel.Size = UDim2.new(0.554, 0, 1, 0)
+		TitleLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+		TitleLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+		TitleLabel.BackgroundTransparency = 1
+		TitleLabel.ZIndex = 4
+		TitleLabel.Font = Enum.Font.GothamBold
+		TitleLabel.TextSize = 20
+		TitleLabel.TextColor3 = Color3.fromRGB(237, 237, 237)
+		TitleLabel.Text = v
+	end
+end
 
 function Library:CreateHub()
 	local Tab = {}
@@ -472,6 +517,8 @@ function Library:CreateHub()
 	StatusStroke.Color = Color3.fromRGB(60, 60, 60)
 
 	PremiumPadding.PaddingTop = UDim.new(0.015, 0)
+	
+	CreateGames(GameSectionContainer)
 	
 	local function UpdateInput(Input)
 		local Delta = Input.Position - DragStart
