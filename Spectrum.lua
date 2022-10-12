@@ -568,20 +568,4 @@ function Library:CreateHub()
 	return Tab
 end
 
-for i, v in pairs(SpectrumGui.Main.SideBar.Container:GetDescendants()()) do
-	if v:IsA("TextButton") then
-		v.MouseButton1Click:Connect(function()
-			for x, y in pairs(SpectrumGui.Main.Sections:GetChildren()) do
-				if y:IsA("Frame") then
-					if v.Parent.TextLabel.Text == y.Name then
-						y.Visible = true
-					else
-						y.Visible = false
-					end
-				end
-			end
-		end)
-	end
-end
-
 return Library
