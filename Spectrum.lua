@@ -82,6 +82,8 @@ function Library:CreateHub()
 	local PremiumStatusLabel = Instance.new("TextLabel", StatusFrame)
 	local PriceLabel = Instance.new("TextLabel", PriceFrame)
 	local LinkButtonLabel = Instance.new("TextLabel", LinkButton)
+	local GameSectionFrame = Instance.new("Frame", SectionsFrame)
+	local GameSectionContainer = Instance.new("ScrollingFrame", GameSectionFrame)
 	
 	SpectrumUI.Parent = game.Players.LocalPlayer.PlayerGui
 	SpectrumUI.ZIndexBehavior = Enum.ZIndexBehavior.Global
@@ -433,6 +435,24 @@ function Library:CreateHub()
 	LinkButtonLabel.ZIndex = 4
 	LinkButtonLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	LinkButtonLabel.Name = "Label"
+	
+	GameSectionFrame.Size = UDim2.new(1, 0, 1, 0)
+	GameSectionFrame.BackgroundTransparency = 1
+	GameSectionFrame.Name = "Games"
+	GameSectionFrame.Visible = false
+
+	GameSectionContainer.Size = UDim2.new(1, 0, 1, 0)
+	GameSectionContainer.Position = UDim2.new(0.5, 0, 0.5, 0)
+	GameSectionContainer.AnchorPoint = Vector2.new(0.5, 0.5)
+	GameSectionContainer.BackgroundTransparency = 1
+	GameSectionContainer.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
+	GameSectionContainer.BottomImage = "rbxassetid://10321579711"
+	GameSectionContainer.MidImage = "rbxassetid://10321579711"
+	GameSectionContainer.TopImage = "rbxassetid://10321579711"
+	GameSectionContainer.ScrollBarImageColor3 = Color3.fromRGB(35, 35, 35)
+	GameSectionContainer.ScrollBarThickness = 8
+	GameSectionContainer.ZIndex = 2
+	GameSectionContainer.BorderSizePixel = 0
 
 	LinkCorner.CornerRadius = UDim.new(0, 3)
 	PriceCorner.CornerRadius = UDim.new(0, 3)
