@@ -13,7 +13,7 @@ local DragStart = nil
 local StartPosition = nil
 local PlayerMouse = game.Players.LocalPlayer:GetMouse()
 local Games = {
-	"Murder Mystery 2"
+	["Murder Mystery 2"] = 142823291
 }
 
 --// Main \\--
@@ -30,7 +30,7 @@ function CreateGames(Parent)
 		ButtonFrame.Size = UDim2.new(0.95, 0, 0, 35)
 		ButtonFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 		ButtonFrame.ZIndex = 3
-		ButtonFrame.Name = v
+		ButtonFrame.Name = i
 
 		Button.Size = UDim2.new(1, 0, 1, 0)
 		Button.BackgroundTransparency = 1
@@ -56,7 +56,7 @@ function CreateGames(Parent)
 		TitleLabel.Font = Enum.Font.GothamBold
 		TitleLabel.TextSize = 20
 		TitleLabel.TextColor3 = Color3.fromRGB(237, 237, 237)
-		TitleLabel.Text = v
+		TitleLabel.Text = i
 	end
 end
 
